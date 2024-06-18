@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+import DocumentationIcon from './icons/IconDocumentation.vue'
 </script>
 <template>
   <nav>
@@ -10,4 +11,5 @@ import { RouterLink } from 'vue-router'
     <RouterLink to="/account">Account</RouterLink>
     <RouterLink to="/login">Login</RouterLink>
   </nav>
+  <DocumentationIcon />
 </template>
