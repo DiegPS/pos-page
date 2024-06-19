@@ -28,7 +28,7 @@ const handleInput = (event: Event) => {
     <header>
       <h3>¿Entre cúantos quieres dividir las Propinas?</h3>
       <div>
-        <input @input="handleInput" />
+        <input @input="handleInput" />$
         {{
           Number(amount.join('') / divisor).toLocaleString('en-US', {
             minimumFractionDigits: 2
@@ -51,9 +51,9 @@ const handleInput = (event: Event) => {
 <style scoped>
 input {
   padding: 0.5rem;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid #3d3d3d;
-  max-width: 6rem;
+  max-width: 8rem;
 }
 div {
   display: flex;
