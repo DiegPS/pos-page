@@ -79,6 +79,7 @@ section {
   border: 2px solid #e7e7e7;
   gap: 0.4rem;
   padding: 1.5rem 2.8rem;
+  margin: 0 auto;
 }
 
 section.valid-amount {
