@@ -48,6 +48,6 @@ section {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0rem 2rem;
 }
 </style>
