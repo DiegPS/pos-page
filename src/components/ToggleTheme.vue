@@ -27,8 +27,8 @@ label {
 .toggle-slot {
   font-size: 10px;
   position: relative;
-  height: 1rem; /* Actualizado */
-  width: 2rem; /* Actualizado */
+  height: 1rem;
+  width: 2rem;
   border: 0px solid transparent;
   border-radius: 10em;
   background-color: #999999;
@@ -40,13 +40,13 @@ label {
 }
 
 .toggle-button {
-  transform: translate(0.15em, 0.125em); /* Actualizado */
+  transform: translate(0.15em, 0.125em);
   position: absolute;
-  height: 1.5em; /* Actualizado */
-  width: 1.5em; /* Actualizado */
+  height: 1.5em;
+  width: 1.5em;
   border-radius: 50%;
   background-color: #ffeccf;
-  box-shadow: inset 0px 0px 0px 0.375em #ffbb52; /* Actualizado */
+  box-shadow: inset 0px 0px 0px 0.375em #ffbb52;
   transition:
     background-color 250ms,
     border-color 250ms,
