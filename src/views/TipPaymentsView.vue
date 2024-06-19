@@ -22,7 +22,7 @@ const updateAmount = (newAmount: string[]) => {
       <TouchNumbers @update="updateAmount" />
       <PreviousPayments />
     </div>
-    <TotalFooterPayment />
+    <TotalFooterPayment :amount="amount" />
   </main>
 </template>
 

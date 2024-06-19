@@ -35,7 +35,10 @@ const handleDelete = () => {
         <span v-else>{{ number }}</span>
       </p>
     </footer>
-    <div :class="{ 'valid-amount': amount.length > 1 }">Cantidad Restante</div>
+    <div :class="{ 'valid-amount': amount.length > 1 }">
+      Cantidad Restante
+      {{ Number(amount.join('')).toLocaleString('en-US', { minimumFractionDigits: 2 }) }}
+    </div>
   </section>
 </template>
 <style scoped>
@@ -78,7 +81,7 @@ section {
   border-radius: 10px;
   border: 2px solid #e7e7e7;
   gap: 0.4rem;
-  padding: 1.5rem 2.8rem;
+  padding: 1.5rem 3rem;
   margin: 0 auto;
 }
 

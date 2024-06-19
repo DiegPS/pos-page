@@ -1,15 +1,19 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineProps<{
+  amount: string[]
+}>()
+</script>
 
 <template>
   <section>
     <aside>
       <header>
         <p>Total pagado</p>
-        <p>amount</p>
+        <p>{{ Number(amount.join('')).toLocaleString('en-US', { minimumFractionDigits: 2 }) }}</p>
       </header>
       <footer>
         <p>Restante por pagar</p>
-        <p>amount</p>
+        <p>{{ Number(amount.join('')).toLocaleString('en-US', { minimumFractionDigits: 2 }) }}</p>
       </footer>
     </aside>
     <button>Pagar Propinas</button>
