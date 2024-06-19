@@ -19,6 +19,11 @@ import IconCreditCard from './icons/IconCreditCard.vue'
 </template>
 
 <style scoped>
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
 section {
   display: flex;
   flex-direction: column;
