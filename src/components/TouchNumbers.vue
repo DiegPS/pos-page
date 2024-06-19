@@ -23,25 +23,38 @@ const handleDelete = () => {
 </script>
 
 <template>
-  <div>
-    <section :class="{ 'valid-amount': amount.length > 1 }">
-      <header>
-        <h2>$</h2>
-        <h2>{{ amount.join('') }}</h2>
-        <IconDelete @click="handleDelete" />
-      </header>
-      <footer class="numbers">
-        <p v-for="number in numbers" :key="number.toString()" @click="handleClick(number)">
-          <IconCircleCheck v-if="number === false" />
-          <span v-else>{{ number }}</span>
-        </p>
-      </footer>
-    </section>
-  </div>
+  <section :class="{ 'valid-amount': amount.length > 1 }">
+    <header>
+      <h2>$</h2>
+      <h2>{{ amount.join('') }}</h2>
+      <IconDelete @click="handleDelete" />
+    </header>
+    <footer class="numbers">
+      <p v-for="number in numbers" :key="number.toString()" @click="handleClick(number)">
+        <IconCircleCheck v-if="number === false" />
+        <span v-else>{{ number }}</span>
+      </p>
+    </footer>
+    <div :class="{ 'valid-amount': amount.length > 1 }">Cantidad Restante</div>
+  </section>
 </template>
 <style scoped>
+div {
+  display: none;
+  color: #ed6959;
+  font-weight: 700;
+  justify-content: center;
+  padding: 0.3rem 0rem;
+}
+div.valid-amount {
+  display: flex;
+  border: 2px solid #ed6959;
+  border-color: #ed6959;
+  background-color: #fef5f4;
+  border-radius: 10px;
+}
 h2 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 svg:hover {
@@ -64,8 +77,8 @@ section {
   background-color: #e7e7e7;
   border-radius: 10px;
   border: 2px solid #e7e7e7;
-  gap: 0.2rem;
-  padding: 1.5rem 2.2rem;
+  gap: 0.4rem;
+  padding: 1.5rem 2.8rem;
 }
 
 section.valid-amount {
@@ -76,7 +89,7 @@ section.valid-amount {
 footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.2rem;
+  gap: 0.6rem;
 }
 
 p {
@@ -87,8 +100,8 @@ p {
   border: 1px solid #d0d0d0;
   background-color: #ffffff;
   color: #3d3d3d;
-  min-height: 4rem;
-  min-width: 4rem;
+  min-height: 4.2rem;
+  min-width: 4.2rem;
   font-size: 1.3rem;
   font-weight: 700;
 }
