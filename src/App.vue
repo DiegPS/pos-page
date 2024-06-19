@@ -4,8 +4,17 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div class="wrapper">
-    <NavigationItem />
+  <div>
+    <aside>
+      <NavigationItem />
+    </aside>
+    <RouterView />
   </div>
-  <RouterView />
 </template>
+
+<style scoped>
+div {
+  display: flex;
+  flex-direction: row;
+}
+</style>
