@@ -18,8 +18,8 @@ button {
   border-radius: 4px;
 }
 p {
-  font-size: 2rem;
   font-weight: 700;
+  font-size: 2.5rem;
   color: #ed6959;
 }
 aside {
@@ -29,7 +29,6 @@ aside {
 }
 
 h2 {
-  font-size: 2rem;
   font-weight: 700;
   color: #ed6959;
 }
