@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import IconWallet from './icons/IconWallet.vue'
 import IconCash from './icons/IconCash.vue'
 import IconCreditCard from './icons/IconCreditCard.vue'
@@ -6,13 +7,35 @@ import TotalTips from './TotalTips.vue'
 defineProps<{
   amount: string[]
 }>()
+const divisor = ref(1)
+const handleInput = (event: Event) => {
+  let divisorCount = (event.target as HTMLInputElement).value
+  if (
+    !divisorCount ||
+    Number(divisorCount) === 0 ||
+    Number(divisorCount) < 1 ||
+    isNaN(Number(divisorCount))
+  ) {
+    divisor.value = 1
+    return
+  }
+  divisor.value = divisorCount
+}
 </script>
 <template>
   <section>
     <TotalTips :amount="amount" />
     <header>
       <h3>¿Entre cúantos quieres dividir las Propinas?</h3>
-      <input />
+      <div>
+        <input @input="handleInput" />
+        {{
+          Number(amount.join('') / divisor).toLocaleString('en-US', {
+            minimumFractionDigits: 2
+          })
+        }}
+        x Persona
+      </div>
     </header>
     <footer>
       <IconWallet />
@@ -26,6 +49,18 @@ defineProps<{
   </section>
 </template>
 <style scoped>
+input {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #3d3d3d;
+  max-width: 6rem;
+}
+div {
+  display: flex;
+  justify-content: space-between;
+  color: #ed6959;
+  font-weight: 700;
+}
 article {
   display: grid;
   gap: 1rem;
