@@ -3,7 +3,7 @@ import { ref, defineEmits } from 'vue'
 import IconDelete from './icons/IconDelete.vue'
 const numbers = ref(['1', '2', '3', '4', '5', '6', '7', '8', '9', '00', '0', false])
 const amount = ref([''])
-
+import IconCircleCheck from './icons/IconCircleCheck.vue'
 const emit = defineEmits(['update'])
 
 const handleClick = (number: string | boolean) => {
@@ -15,28 +15,34 @@ const handleClick = (number: string | boolean) => {
 
   emit('update', amount.value)
 }
-// necesito ponerle este border al section #ed6959 cuando la cantidad es correcta
+
+const handleDelete = () => {
+  amount.value.pop()
+  emit('update', amount.value)
+}
 </script>
 
 <template>
-  <section :class="{ 'valid-amount': amount.length > 1 }">
-    <header>
-      <h2>$</h2>
-      <h2>{{ amount.join('') }}</h2>
-      <IconDelete />
-    </header>
-    <footer class="numbers">
-      <p v-for="number in numbers" :key="number.toString()" @click="handleClick(number)">
-        {{ number }}
-      </p>
-    </footer>
-  </section>
+  <div>
+    <section :class="{ 'valid-amount': amount.length > 1 }">
+      <header>
+        <h2>$</h2>
+        <h2>{{ amount.join('') }}</h2>
+        <IconDelete @click="handleDelete" />
+      </header>
+      <footer class="numbers">
+        <p v-for="number in numbers" :key="number.toString()" @click="handleClick(number)">
+          <IconCircleCheck v-if="number === false" />
+          <span v-else>{{ number }}</span>
+        </p>
+      </footer>
+    </section>
+  </div>
 </template>
 <style scoped>
 h2 {
   font-size: 1.3rem;
   font-weight: 700;
-  margin: 0;
 }
 svg:hover {
   cursor: pointer;
@@ -59,7 +65,7 @@ section {
   border-radius: 10px;
   border: 2px solid #e7e7e7;
   gap: 0.2rem;
-  padding: 1.5rem;
+  padding: 1.5rem 2.2rem;
 }
 
 section.valid-amount {
@@ -81,8 +87,8 @@ p {
   border: 1px solid #d0d0d0;
   background-color: #ffffff;
   color: #3d3d3d;
-  min-height: 3.5rem;
-  min-width: 3.5rem;
+  min-height: 4rem;
+  min-width: 4rem;
   font-size: 1.3rem;
   font-weight: 700;
 }
