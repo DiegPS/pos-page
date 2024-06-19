@@ -1,6 +1,7 @@
 # Point of sale
 
-![image](https://github.com/DiegPS/pos-page/assets/88301232/c61eb64e-647a-491e-8f6e-3eb7cfa95236)
+![image](https://github.com/DiegPS/pos-page/assets/88301232/570efe83-4057-4686-afc8-02f83f7dedcc)
+
 
 ## Customize configuration
 
